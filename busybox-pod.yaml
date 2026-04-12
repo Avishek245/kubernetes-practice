@@ -9,4 +9,7 @@ spec:
   containers:
   - name: busybox
     image: busybox:latest
-    command: ["sh", "-c", "echo Hello from BusyBox && sleep 3600"]
+    command: ["sh", "-c", "env && sleep 3600"]
+    envFrom:
+    - configMapRef:
+        name: app-config
